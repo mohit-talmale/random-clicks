@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enter Your Name</title>
+    <title>Random Photo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -58,25 +58,13 @@
             return images[randomIndex];
         }
 
-        // Prompt the user for their name
-        let userName = prompt("Please enter your name:");
+        // Automatically display a random image on page load
+        const randomImage = getRandomImage();
 
-        // Check if the entered name is "Shital" (case-insensitive)
-        if (userName && userName.toLowerCase() === "shital") {
-            // Select a random image
-            const randomImage = getRandomImage();
-
-            // Create a heading with a welcome message
-            document.write(`<h1>Hello, ${userName}!</h1>`);
-
-            // Display the random image and caption
-            document.write(`<img src="${randomImage}" alt="User Photo">`);
-            document.write(`<div id="caption">Welcome, ${userName}! Here's a random picture for you!</div>`);
-        } else {
-            // If the name is not "Shital", show a message and ask to refresh
-            document.write('<h1>You are not Shital!</h1>');
-            document.write('<div id="caption">Please refresh the page and try again.</div>');
-        }
+        // Display the random image and a welcome message
+        document.write(`<h1>Welcome!</h1>`);
+        document.write(`<img src="${randomImage}" alt="Random Photo">`);
+        document.write(`<div id="caption">Enjoy this random picture!</div>`);
     </script>
 
 </body>
