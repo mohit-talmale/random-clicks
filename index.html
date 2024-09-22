@@ -63,8 +63,16 @@
 
         // Display the random image and a welcome message
         document.write(`<h1>Welcome!</h1>`);
-        document.write(`<img src="${randomImage}" alt="Random Photo">`);
+        document.write(`<img id="randomPhoto" src="${randomImage}" alt="Random Photo">`);
         document.write(`<div id="caption">Enjoy this random picture!</div>`);
+
+        // Error handling for broken images
+        const imgElement = document.getElementById('randomPhoto');
+        imgElement.onerror = function() {
+            // If the image fails to load, display a fallback message
+            imgElement.src = 'fallback.jpg'; // Replace with your own fallback image path
+            document.getElementById('caption').innerText = 'Sorry, the image could not be loaded. Here is an alternative photo.';
+        };
     </script>
 
 </body>
