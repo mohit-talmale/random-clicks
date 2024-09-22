@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Your Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        img {
+            margin-top: 20px;
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #000;
+        }
+
+        h1 {
+            color: purple;
+        }
+
+        #caption {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        // Array containing the paths to 10 different images
+        const images = [
+            'photo1.jpg',
+            'photo2.jpg',
+            'photo3.jpg',
+            'photo4.jpg',
+            'photo5.jpg',
+            'photo6.jpg',
+            'photo7.jpg',
+            'photo8.jpg',
+            'photo9.jpg',
+            // 'photo10.jpg'
+        ];
+
+        // Function to get a random image from the array
+        function getRandomImage() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            return images[randomIndex];
+        }
+
+        // Prompt the user for their name
+        let userName = prompt("Please enter your name:");
+
+        // Check if a name is provided
+        if (userName) {
+            // Select a random image
+            const randomImage = getRandomImage();
+
+            // Create a heading with a welcome message
+            document.write(`<h1>Hello, ${userName}!</h1>`);
+
+            // Display the random image and caption
+            document.write(`<img src="${randomImage}" alt="User Photo">`);
+            document.write(`<div id="caption">Welcome, ${userName}! Here's a random picture for you!</div>`);
+        } else {
+            // Display a message if no name was provided
+            document.write('<h1>Hello, Guest!</h1>');
+            document.write('<div id="caption">Welcome! Please refresh the page and enter your name.</div>');
+        }
+    </script>
+
+</body>
+</html>
