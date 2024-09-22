@@ -61,8 +61,8 @@
         // Prompt the user for their name
         let userName = prompt("Please enter your name:");
 
-        // Check if a name is provided
-        if (userName) {
+        // Check if the entered name is "Shital" (case-insensitive)
+        if (userName && userName.toLowerCase() === "shital") {
             // Select a random image
             const randomImage = getRandomImage();
 
@@ -73,9 +73,9 @@
             document.write(`<img src="${randomImage}" alt="User Photo">`);
             document.write(`<div id="caption">Welcome, ${userName}! Here's a random picture for you!</div>`);
         } else {
-            // Display a message if no name was provided
-            document.write('<h1>Hello, Guest!</h1>');
-            document.write('<div id="caption">Welcome! Please refresh the page and enter your name.</div>');
+            // If the name is not "Shital", show a message and ask to refresh
+            document.write('<h1>You are not Shital!</h1>');
+            document.write('<div id="caption">Please refresh the page and try again.</div>');
         }
     </script>
 
